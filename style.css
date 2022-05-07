@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+header > nav li, 
+a, 
+button {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: black;
+    text-decoration:wavy;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: bisque;
+}
+
+.nav__links {
+    list-style-type: lower-alpha;
+    text-decoration: none;
+}
+.nav__links li {
+    display: inline-block;
+    padding: 0px 40px;
+}
+button {
+    padding: 10px 30px;
+    background-color: darkgreen;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+footer .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+footer .container .section {
+    margin-right: 30px;
+}
+
+footer .container .section .aboutus {
+    width: 80%;
+}
+
+footer .container h2 {
+    position: relative;
+    color: rgb(107, 19, 73);
+    font-weight: 50;
+    margin-bottom: 15px;
+}
+footer .container h2:before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 200px;
+    height: 2px;
+    background: green
+}
+footer p {
+    color: rgb(170, 89, 180);
+}
+
+.quicklinks {
+    position: relative;
+    width: 30%;
+}
+
+.quicklinks ul li a {
+    color: rgb(170, 89, 180);
+    text-decoration: none;
+    margin-bottom: 20px;
+    display: inline-table;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+.quicklinks ul li a:hover {
+    color: white
+}
+.contact {
+    width: calc(35% - 60px);
+    margin-right: 0px;
+}
+
+
+.contact .info li span {
+    color: rgb(170, 89, 180);
+}
+.contact .info li a {
+    color: rgb(170, 89, 180);
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+.contact .info li a:hover {
+    color: #fff;
+}
+.copyright {
+    width: 100%;
+    background :whitesmoke;
+    padding: 8px 100px;
+    color:red;
+    text-align: center;
+}

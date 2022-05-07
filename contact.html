@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cart</title>
-    <link rel="stylesheet" type="text/css" href="cart.css">
+    <title>contact</title>
+    <link rel="stylesheet" type="text/css" href="contact.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
 		<nav>
 			<ul class="nav__links">
 				<li><a href="Home.html">Home</a></li>
-				<li><a href="Sales.html">Products</a></li>
+				<li><a href="Sales.html">Produtcs</a></li>
 				<li><a href="cart.html">Cart</a></li>
 			</ul>
 		</nav>
@@ -21,11 +21,32 @@
 			<button>Contact</button>
 		</a>
 	</header>
-		<div>
-			<h1 id="your_cart">Your cart</h1>
-			 <p id="total">Your Total: </p>
-			<button id="checkoutBtn"> Checkout </button>
-		</div>
+
+	<h1>Contact Form</h1>
+	<p>Please fill out the form below and we will be in touch.</p>
+	<form class="new-contact-us-form">
+		
+		<label class="floating-label " > 
+			<input type="text"  placeholder="first name"> </label>
+		<label class="floating-label "> 
+			<input type="text"  placeholder="last name"> </label>
+		<label class="floating-label > 
+			<input type="email"  placeholder="email"> </label>
+		<label class="floating-label "> 
+			<input type="text"  placeholder="phone number"> </label>
+
+		<fieldset>
+			<p>Preferred method of Contact</p>
+			<label>
+				<input type="radio" value="email"> email </label>
+			<label>
+				<input type="radio"  value="phone"> phone </label>
+		</fieldset>
+		<label class="floating-label ">
+			<textarea  placeholder="add you comments here"></textarea>
+		</label>
+		<input type="submit" value="Send Message"> </form>  </div>
+
 	<footer>
 		<div class="container">
 			<div class="section aboutus">
@@ -56,6 +77,5 @@
 	<div class="copyright">
 		<p>Copyright &copy; All rights reserved.</p>
 	</div>
-	<script src="sales.js"></script>
 </body>
 </html>

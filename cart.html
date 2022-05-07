@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Cart
+    </title>
+</head>
+<style>
+    body{
+        background-color: black;
+    }
+    .container_row{
+        display: grid;
+        height: 105vh;
+        width: 105vh;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .layer1, .layer2{
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .layer2{
+        position: absolute;
+        margin-top: 70px;
+    }
+
+
+    .leftTab{
+        background-color: rgb(0, 0, 0);
+        color: white;
+        text-align: center;
+        margin: 5vw;
+        margin-top: .5vh;
+        margin-left: 3vw;
+        border-radius: 20px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 3vmin;
+        width: 1vw;
+        height: 3vw;
+        position: fixed;
+        font-weight:bold;
+    }
+
+    .rightTab{
+        background-color: rgb(0, 0, 0);
+        color: white;
+        text-align: center;
+        margin: 5vw;
+        margin-top: .5vh;
+        border-radius: 20px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 3vmin;
+        width: 1vw;
+        height: 3vw;
+        position:fixed;
+        left: 87vw;
+        font-weight:bold;
+    }
+
+    p{
+        color: white;
+        font-family: 'Poppins', sans-serif; 
+    }
+
+    .logo{
+        position: absolute;
+        top: -8vh;
+        left: 45.7vw;
+    }
+
+    .button {
+        height: 80px;
+        width: 300px;
+        padding-right: 12px;
+        font-family: 'Poppins', sans-serif; 
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        background-color: #ffffff;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+        margin: 5px
+    }   
+ 
+    .button:hover {background-color: #e2e2e2}
+ 
+    .button:active {
+        background-color: #555555;
+        box-shadow: 0 5px rgb(39, 39, 39);
+        transform: translateY(4px);
+    }
+
+    .productWrapper{
+        background-color: white;
+        position:absolute;
+        left: -10px;
+        top: 80px;
+        height: 815px;
+        width: 100.1vw;
+    }
+
+    .product{
+        display: inline-flex;
+        position: relative;
+        height: 600px;
+        width: 1000px;
+        justify-content: center;
+        margin-top: 50px;
+        margin-left: 10px;
+        margin-right: 20px;
+    }
+
+    .button {
+        height: 80px;
+        width: 300px;
+        padding-right: 12px;
+        font-family: 'Poppins', sans-serif; 
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        background-color: #000000;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+        margin: 5px
+    }   
+ 
+    .button:hover {background-color: #303030}
+ 
+    .button:active {
+        background-color: #555555;
+        box-shadow: 0 5px rgb(39, 39, 39);
+        transform: translateY(4px);
+    }
+
+    .cartList{
+        display: flex;
+        background-color: white;
+        width: 100.1vw;
+        margin-top: 130px;
+    }
+
+    .listItem{
+        display: flex;
+        flex-direction: row;
+        height: 100px;
+        width: 1825px;
+        justify-content: center;
+        border-bottom-color: black;
+        border-bottom-width: 8px;
+        border-bottom-style: solid;
+    }
+
+    .productImage{
+        width: auto;
+        height: auto;
+        max-height: 100px;
+        max-width: 100px;
+        bottom: 0;
+    }
+
+    .productName{
+        font-size: 20px;
+        color: black;
+        width: 300px;
+        margin-left: 50px;
+        max-width: 300px;
+        font-weight: 500;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .productNumber{
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: 0;
+        height: 30px;
+        width: 30px;
+    }
+
+    .fieldName{
+        font-size: 20px;
+        color: black;
+        margin-right: 0px;
+        margin-left: 100px;
+        font-weight: 500;
+        margin-top: 38px;
+        margin-bottom: 50x;
+    }
+
+    .price{
+        display: flex;
+        font-size: 20px;
+        color: black;
+        width: 150px;
+        font-family: 'Poppins', sans-serif; 
+        justify-content: center;
+        font-weight: 300;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .paymentWrapper{
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        height: 600px;
+        width: 1825px;
+        justify-content: center;
+        border-color: black;
+        border-bottom-width: 8px;
+        border-style: solid;
+    }
+
+    .paymentRow{
+        display: flex;
+        flex-direction: row;
+        height: 6vw;
+        width: 100%;
+        justify-content: center;
+        border-bottom-style: solid;
+        border-color: black;
+    }
+
+    .paymentFieldName{
+        font-family: 'Poppins', sans-serif;
+        margin: auto;
+        margin-right: 0px;
+        color: black;
+        
+    }
+
+    .paymentField{
+        font-family: 'Poppins', sans-serif;
+        margin: auto;
+        margin-left: 1vw;
+        height: 1vw;
+        width: 10vw;
+        resize: none;
+        border-color: black;
+        border-width: 2px;
+    }
+
+    .thanks{
+        font-size: 40px
+    }
+</style>
+<body onload="display()">
+    <div class="contaner_row">
+        <div class="layer2">
+            <a href="aboutPage.html" class="leftTab">
+                ABOUT
+            </a>
+            <a href="cart.html" class="rightTab">
+                CART
+            </a>
+ 
+            <a href="productPage.html">
+                <img class="logo" type=png src="images/cxdgamepad-01.png">
+            </a>
+      
+            <div class="productWrapper">
+                <div style = "display: flex; flex-direction: column;">
+                    <p style="position: absolute; top: 33vh; left:873px;
+                    color: black; top: -10px; font-size: 45px;">
+                        C A R T
+                    </p>
+                    <form action="orderPlaced.html" method="post" class="cartList" id="checkout-info" name="checkout-info">
+                        <ul id = "cart-list">
+                        </ul>
+                    </form>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+<script>
+    var cartList = document.getElementById('cart-list');
+    var cartTotal = 0;
+    var OrderPlaced = localStorage.getItem('OrderPlaced');
+
+    //Declares a 2d var array big enough to store all out product info
+    var productInfo = Array.from(Array(9), () => new Array(4));
+    
+    //the localStorage Id for a product is stored at index 0
+    productInfo[0][0] = 'keyboard';
+
+    //the image link for a product is stored at 1
+    productInfo[0][1] = 'https://assets3.razerzone.com/LWwk2fInmqF-R0-jr-c7Uy4OWWI=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh9d%2Fhc8%2F9207479861278%2Frazer-blackwidow-v3-mini-hyperspeed-phantom_500x500.png';
+    
+    //the product name is stored at 2
+    productInfo[0][2] = 'Razer Blackwidow V3 Pro';
+
+    //the price of a procuct is stored at 3
+    productInfo[0][3] = 229.99;
+
+    //the rest of the product info storage
+    productInfo[1][0] = 'controller';
+    productInfo[1][1] = 'https://cdn.cnetcontent.com/syndication/mediaserverredirect/461cf7a8c7b27c64fc3f8fed176f62a9/width(1200).png';
+    productInfo[1][2] = 'Xbox Elite Controller';
+    productInfo[1][3] = 139.99;
+    
+    productInfo[2][0] = 'mic';
+    productInfo[2][1] = 'https://cdn11.bigcommerce.com/s-sjkuycrcgv/images/stencil/1280x1280/products/2729/8386/yeti-header-yetiblackout-desktop__82195.1648062218.png?c=2';
+    productInfo[2][2] = 'Blue Yeti Microphone';
+    productInfo[2][3] = 99.99;
+
+    productInfo[3][0] = 'mouse';
+    productInfo[3][1] = 'https://assets2.razerzone.com/images/da10m/carousel/razer-death-adder-gallery-29.png';
+    productInfo[3][2] = 'Razer DeathAdder Pro';
+    productInfo[3][3] = 129.99;
+
+    productInfo[4][0] = 'pc';
+    productInfo[4][1] = 'https://images.hothardware.com/contentimages/article/2917/content/1x1_1200x1200_highres-alenware-aurora-ryzen.jpg';
+    productInfo[4][2] = 'Alienware Aurora r10 Ryzen Edition';
+    productInfo[4][3] = 2449.99;
+
+    productInfo[5][0] = 'monitor';
+    productInfo[5][1] = 'https://img.global.news.samsung.com/global/wp-content/uploads/2021/07/Odyssey_Neo_G9_PR_main2.jpg';
+    productInfo[5][2] = 'Samsung Odyssey Neo G9';
+    productInfo[5][3] = 1899.99;
+
+    productInfo[6][0] = 'headphones';
+    productInfo[6][1] = 'https://cdn.shopify.com/s/files/1/0065/4432/6771/products/HD560S_740x.png?v=1605123849';
+    productInfo[6][2] = 'Sennheiser HD 560S';
+    productInfo[6][3] = 199.99;
+
+    productInfo[7][0] = 'vr';
+    productInfo[7][1] = 'https://m.media-amazon.com/images/I/61QiWPgRS0S._AC_SL1500_.jpg';
+    productInfo[7][2] = 'Valve Index Full Kit';
+    productInfo[7][3] = 999.00;
+
+    productInfo[8][0] = 'chair';
+    productInfo[8][1] = 'https://cdn.eteknix.com/wp-content/uploads/2018/07/O2-BLACK-12-684x1024.jpg';
+    productInfo[8][2] = 'Secretlab Omega Black';
+    productInfo[8][3] = 549.00;
+
+    // called in the body onLoad event
+    function display(){
+        var noProducts = true;
+        cartTotal = 0;
+        //Dynamically populates the cart using our product Info
+        for(var i = 0; i < 9; i++){
+            localStorage.setItem('orderPlaced', '0');
+            if (0 != parseInt(localStorage.getItem(productInfo[i][0]))){
+                noProducts = false;
+
+                var productDiv = document.createElement('div');
+                productDiv.className = 'listItem';
+                
+                var productImg = document.createElement('img');
+                productImg.className = 'productImage';
+                productImg.src = productInfo[i][1];
+                
+                var productName = document.createElement('p');
+                productName.className = 'productName';
+                productName.innerText = productInfo[i][2];
+
+                var amountTag = document.createElement('p');
+                amountTag.className = 'fieldName';
+                amountTag.innerText = 'Amount:';
+
+                var numItems = document.createElement('input');
+                numItems.name = 'num-' + productInfo[i][0];
+                numItems.id = 'num-' + productInfo[i][0];
+                numItems.type = 'number';
+                numItems.className = 'productNumber';
+                numItems.value = parseInt(localStorage.getItem(productInfo[i][0]));
+
+                var priceTag = document.createElement('p');
+                priceTag.className = 'fieldName';
+                priceTag.innerText = 'Price:';
+
+                var priceTotal = document.createElement('p');
+                priceTotal.name = 'keyboard-price-total';
+                priceTotal.className = 'price';
+                var priceTotalValue = productInfo[i][3] * parseInt(localStorage.getItem(productInfo[i][0]));
+                cartTotal = cartTotal + priceTotalValue;
+                priceTotalValue = priceTotalValue.toFixed(2);
+                priceTotal.innerText = "US$" + priceTotalValue.toString();
+
+                //adds all elements do productDiv
+                cartList.appendChild(productDiv);
+                productDiv.appendChild(productImg);
+                productDiv.appendChild(productName);
+                productDiv.appendChild(amountTag);
+                productDiv.appendChild(numItems);
+                productDiv.appendChild(priceTag);
+                productDiv.appendChild(priceTotal);
+
+                //NEEDS FIXING
+                //dynamically ensures that products all take up the same amount of width
+                var imgWidth = productImg.offsetWidth;
+                var imgMarginWidth = ((200 - imgWidth) / 2) + 'px' ;
+                
+                if (imgMarginWidth.match(/(\d+)/)[0] > 0){
+                    var imgStyle = {
+                    "padding-left": imgMarginWidth,
+                    "padding-right": imgMarginWidth
+                    };
+
+                    Object.assign(productImg.style, imgStyle);
+                }
+                //image logic ends here
+            }
+        }
+        
+        if (noProducts === true){
+                var productDiv = document.createElement('div');
+                productDiv.className = 'listItem';
+                productDiv.style.borderBottomStyle = 'hidden';
+
+                var emptyCartMessage = document.createElement('p');
+                emptyCartMessage.className = 'productName';
+                emptyCartMessage.innerText = 'B U Y - T H I N G S';
+                emptyCartMessage.style.fontSize = '40px';
+                emptyCartMessage.style.maxWidth = '1000px';
+                emptyCartMessage.style.width = '383px';
+
+                // var plz = document.createElement('p');
+                // plz.className = 'productName';
+                // plz.innerText = 'plz';
+                // plz.style.fontSize = '20px';
+                // plz.style.marginLeft = '45vw';
+                // plz.style.marginTop = '2vw';
+                // plz.style.maxWidth = '1000px';
+                // plz.style.width = '383px';
+
+
+                productDiv.appendChild(emptyCartMessage);
+                cartList.appendChild(productDiv);
+                // cartList.appendChild(plz);
+                
+            }else if(noProducts === false){
+            var paymentWrapper = document.createElement('div');
+            paymentWrapper.className = 'paymentWrapper';
+            cartList.appendChild(paymentWrapper);
+
+
+                var rowOne = document.createElement('div');
+                rowOne.className = 'paymentRow';
+                rowOne.style.paddingBottom = '1vw'
+                paymentWrapper.appendChild(rowOne);
+                
+                    var updateButton = document.createElement('button');
+                    updateButton.type = 'button';
+                    updateButton.className = 'button';
+                    updateButton.innerText = 'Update Cart';
+                    updateButton.style.margin = 'auto';
+                    updateButton.addEventListener('click', update);
+
+                    var cartTotalDisplay = document.createElement('p');
+                    cartTotalDisplay.className = '';
+                    cartTotalDisplay.style.color = 'black';
+                    cartTotalDisplay.style.margin = 'auto';
+                    cartTotalDisplay.style.marginRight = '0';
+                    cartTotalDisplay.style.fontSize = '50px';
+                    cartTotalDisplay.style.fontWeight = 'bolder';
+                    cartTotalDisplay.innerText = 'T O T A L: US$ ';
+
+                    var cartTotalAmount = document.createElement('input');
+                    cartTotalAmount.type = 'text';
+                    cartTotalAmount.style.marginLeft = '0px';
+                    cartTotalAmount.style.height = 'auto';
+                    cartTotalAmount.style.fontSize = '50px';
+                    cartTotalAmount.style.fontWeight = 'bolder';
+                    cartTotalAmount.setAttribute('readonly', true);
+                    cartTotalAmount.form = 'checkout-info';
+                    cartTotalAmount.name = 'cart-total-amount';
+                    cartTotalAmount.className = 'paymentField';
+                    cartTotalAmount.style.borderStyle = 'none';
+                    cartTotalAmount.value = cartTotal.toFixed(2);
+
+                    rowOne.appendChild(updateButton);
+                    rowOne.appendChild(cartTotalDisplay);
+                    rowOne.appendChild(cartTotalAmount);
+
+
+                var rowTwo = document.createElement('div');
+                rowTwo.className = 'paymentRow';
+                paymentWrapper.appendChild(rowTwo);
+
+                    var addressLabel = document.createElement('p');
+                    addressLabel.className = 'productName';
+                    addressLabel.style.margin = 'auto';
+                    addressLabel.innerText = 'A D D R E S S';
+                    rowTwo.appendChild(addressLabel);
+
+                    var shippingNameLabel = document.createElement('p');
+                    shippingNameLabel.className = 'paymentFieldName';
+                    shippingNameLabel.innerText = 'Name:';
+                    rowTwo.appendChild(shippingNameLabel);
+                    var shippingNameLabel = document.createElement('textarea');
+                    shippingNameLabel.form = 'checkout-info';
+                    shippingNameLabel.className = 'paymentField';
+                    shippingNameLabel.innerText = 'John J. Johnson';
+                    shippingNameLabel.name = 'shipping-name-Input';
+                    rowTwo.appendChild(shippingNameLabel);
+
+                    var streetLabel = document.createElement('p');
+                    streetLabel.className = 'paymentFieldName';
+                    streetLabel.innerText = 'Street:';
+                    rowTwo.appendChild(streetLabel);
+                    var streetInput = document.createElement('textarea');
+                    streetInput.form = 'checkout-info';
+                    streetInput.className = 'paymentField';
+                    streetInput.innerText = '1234 Example Street, Unit 101';
+                    streetInput.name = 'street-Input';
+                    rowTwo.appendChild(streetInput);
+
+                    var cityLabel = document.createElement('p');
+                    cityLabel.className = 'paymentFieldName';
+                    cityLabel.innerText = 'City:';
+                    rowTwo.appendChild(cityLabel);
+                    var cityInput = document.createElement('textarea');
+                    cityInput.form = 'checkout-info';
+                    cityInput.className = 'paymentField';
+                    cityInput.innerText = 'Chicago';
+                    cityInput.style.width = '5vw';
+                    cityInput.name = 'city-Input';
+                    rowTwo.appendChild(cityInput);
+
+                    var stateLabel = document.createElement('p');
+                    stateLabel.className = 'paymentFieldName';
+                    stateLabel.innerText = 'State/Province:';
+                    rowTwo.appendChild(stateLabel);
+                    var stateInput = document.createElement('textarea');
+                    stateInput.form = 'checkout-info';
+                    stateInput.className = 'paymentField';
+                    stateInput.style.width = '5vw';
+                    stateInput.innerText = 'United States';
+                    stateInput.name = 'state-Input';
+                    rowTwo.appendChild(stateInput);
+
+                    var zipLabel = document.createElement('p');
+                    zipLabel.className = 'paymentFieldName';
+                    zipLabel.innerText = 'Zip Code:';
+                    rowTwo.appendChild(zipLabel);
+                    var zipInput = document.createElement('textarea');
+                    zipInput.form = 'checkout-info';
+                    zipInput.className = 'paymentField';
+                    zipInput.style.width = '5vw';
+                    zipInput.innerText = '12345-6789';
+                    zipInput.name = 'state-Input';
+                    rowTwo.appendChild(zipInput);
+
+                var rowThree = document.createElement('div');
+                rowThree.className = 'paymentRow';
+                paymentWrapper.appendChild(rowThree);
+
+                    var billingLabel = document.createElement('p');
+                    billingLabel.className = 'productName';
+                    billingLabel.style.margin = 'auto';
+                    billingLabel.innerText = 'C A R D - I N F O';
+                    rowThree.appendChild(billingLabel);
+
+                    var cardNumLabel = document.createElement('p');
+                    cardNumLabel.className = 'paymentFieldName';
+                    cardNumLabel.innerText = 'Card Number:';
+                    rowThree.appendChild(cardNumLabel);
+                    var cardNumInput = document.createElement('textarea');
+                    cardNumInput.form = 'checkout-info';
+                    cardNumInput.style.width = '9vw';
+                    cardNumInput.className = 'paymentField';
+                    cardNumInput.innerText = 'XXXX-XXXX-XXXX-XXXX';
+                    cardNumInput.name = 'card-number-Input';
+                    rowThree.appendChild(cardNumInput);
+
+                    var experationLabel = document.createElement('p');
+                    experationLabel.className = 'paymentFieldName';
+                    experationLabel.innerText = 'Expiration Date:';
+                    rowThree.appendChild(experationLabel);
+                    var experationInput = document.createElement('textarea');
+                    experationInput.form = 'checkout-info';
+                    experationInput.style.width = '3vw';
+                    experationInput.className = 'paymentField';
+                    experationInput.innerText = 'MM/YY';
+                    experationInput.name = 'expiration-date-Input';
+                    rowThree.appendChild(experationInput);
+
+                    var billingNameLabel = document.createElement('p');
+                    billingNameLabel.className = 'paymentFieldName';
+                    billingNameLabel.innerText = 'Name On Card:';
+                    rowThree.appendChild(billingNameLabel);
+                    var billingNameInput = document.createElement('textarea');
+                    billingNameInput.form = 'checkout-info';
+                    billingNameInput.className = 'paymentField';
+                    billingNameInput.innerText = 'John J. Johnson';
+                    billingNameInput.name = 'billing-name-Input';
+                    rowThree.appendChild(billingNameInput);
+
+                    var ccLabel = document.createElement('p');
+                    ccLabel.className = 'paymentFieldName';
+                    ccLabel.innerText = 'Security Code:';
+                    rowThree.appendChild(ccLabel);
+                    var ccInput = document.createElement('textarea');
+                    ccInput.form = 'checkout-info';
+                    ccInput.style.width = '1.75vw';
+                    ccInput.className = 'paymentField';
+                    ccInput.innerText = 'XXX';
+                    ccInput.name = 'security-code-Input';
+                    rowThree.appendChild(ccInput);
+                
+                var rowFour = document.createElement('div');
+                rowFour.className = 'paymentRow';
+                rowFour.style.marginTop = '4vw';
+                rowFour.style.borderBottomStyle = 'none';
+                paymentWrapper.appendChild(rowFour);
+
+                    var placeOrderButton = document.createElement('button');
+                    placeOrderButton.className = 'button';
+                    placeOrderButton.innerText = 'Place Order';
+                    placeOrderButton.style.margin = 'auto';
+                    placeOrderButton.addEventListener('click', placeOrder);
+                    rowFour.appendChild(placeOrderButton);
+                    
+        }
+
+        
+    }
+
+    function placeOrder(){
+        initializeItems();
+        localStorage.setItem('orderPlaced', '1');
+        
+        var orderForm = document.getElementById('checkout-info');
+        orderForm.submit();
+        display();
+    }
+
+    function update(){
+        
+        for (var i = 0; i < 9; i++){
+            if(parseInt(localStorage.getItem(productInfo[i][0])) > 0){
+                localStorage.setItem(productInfo[i][0], document.getElementById('num-' + productInfo[i][0]).value);
+            }
+        }
+        document.location.reload();
+    }
+
+    function initializeItems(){
+        localStorage.setItem('keyboard', '0');
+        localStorage.setItem('controller', '0');
+        localStorage.setItem('mic', '0');
+        localStorage.setItem('mouse', '0');
+        localStorage.setItem('pc', '0');
+        localStorage.setItem('monitor', '0');
+        localStorage.setItem('headphones', '0');
+        localStorage.setItem('vr', '0');
+        localStorage.setItem('chair', '0');
+    }
+</script>

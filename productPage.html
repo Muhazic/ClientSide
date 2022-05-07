@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        CxD Products
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta n content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    body{
+        background-color: black;
+    }
+    .container_row{
+        display: grid;
+        height: 105vh;
+        width: 105vh;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .layer1, .layer2{
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .layer1 img{
+        min-height: 100vh;
+        min-width: 1024px;
+        width: 100%;
+        height: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin-left: 0px;
+        padding: 0px;
+    }
+
+    .layer2{
+        position: absolute;
+        margin-top: 70px;
+    }
+
+    .leftTab{
+        background-color: rgb(0, 0, 0);
+        color: white;
+        text-align: center;
+        margin: 5vw;
+        margin-top: .5vh;
+        margin-left: 3vw;
+        border-radius: 20px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 3vmin;
+        width: 1vw;
+        height: 3vw;
+        position: fixed;
+        font-weight:bold;
+    }
+
+    .rightTab{
+        background-color: rgb(0, 0, 0);
+        color: white;
+        text-align: center;
+        margin: 5vw;
+        margin-top: .5vh;
+        border-radius: 20px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 3vmin;
+        width: 1vw;
+        height: 3vw;
+        position:fixed;
+        left: 87vw;
+        font-weight:bold;
+    }
+
+    p{
+        font-family: 'Poppins', sans-serif;
+        color: white;
+        position: absolute;
+        top: 33vh;
+        left: 1100px;
+    }
+
+    .logo{
+        position: absolute;
+        top: -8vh;
+        left: 45.7vw;
+    }
+
+    .button {
+        background-color: rgb(0, 0, 0);
+        color: white;
+        text-align: center;
+        margin: 20px;
+        padding: 45px;
+        border-radius: 20px;
+        /* font-family: 'Poppins', sans-serif; */
+        font-size: 25px;
+        width: 100px;
+        height: 30px;
+        height: 80px;
+        width: 300px;
+        padding-right: 12px;
+        font-family: 'Poppins', sans-serif; 
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        background-color: #ffffff;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+        margin: 5px
+    }   
+ 
+    .button:hover {background-color: #e2e2e2}
+ 
+    .button:active {
+        background-color: #555555;
+        box-shadow: 0 5px rgb(39, 39, 39);
+        transform: translateY(4px);
+    }
+
+    .productWrapper{
+        background-color: white;
+        position:absolute;
+        left: -10px;
+        top: 80px;
+        height: 1400px;
+        width: 99.2vw;
+    }
+
+    .product{
+        display: inline-flex;
+        position: relative;
+
+        height: 18vw;
+        width: 26vw;
+        justify-content: center;
+        margin-bottom: 80px;
+        margin-left: 50px;
+        margin-right: 60px;
+    }
+
+    .product img{
+        cursor: pointer;
+        width: auto;
+        max-height: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+
+    p{
+        color: white;
+        position: absolute;
+        top: -70px;
+        left: 45vw;
+        font-size: 45px;
+
+    }
+ 
+</style>
+<body>
+    <div class="contaner_row">
+        <div class="layer2">
+            <a href="aboutPage.html" class="leftTab">
+                ABOUT
+            </a>
+            <a href="cart.html" class="rightTab">
+                CART
+            </a>
+            <a href="StoreHomePage.html">
+                <img class="logo" type=png src="images/cxdgamepad-01.png">
+            </a>
+            
+            <div class="productWrapper">
+                <p style="left:37vw; color: black; top: 10px">
+                    P R O D U C T - P A G E
+                </p>
+                <ul style="background-color: white; display: flex; flex-flow: row wrap; margin-top: 200px;">
+                    <a href="Products/KeyboardProductPage.html" id="BLACKWIDOW V3 PRO" class="product">  
+                            <img src="https://assets3.razerzone.com/LWwk2fInmqF-R0-jr-c7Uy4OWWI=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh9d%2Fhc8%2F9207479861278%2Frazer-blackwidow-v3-mini-hyperspeed-phantom_500x500.png">
+                    </a> 
+                    <a href="Products/ControllerProductPage.html" id="Xbox Elite Controller" class="product">
+                            <img src="https://cdn.cnetcontent.com/syndication/mediaserverredirect/461cf7a8c7b27c64fc3f8fed176f62a9/width(1200).png">
+                    </a> 
+                    <a href="Products/MicrophoneProductPage.html" id="Blue Yeti Microphone" class="product">
+                            <img src="https://cdn11.bigcommerce.com/s-sjkuycrcgv/images/stencil/1280x1280/products/2729/8386/yeti-header-yetiblackout-desktop__82195.1648062218.png?c=2">
+                    </a> 
+                    <a href="Products/MouseProductPage.html" id="Razer DeathAdder" class="product">
+                            <img src="https://assets2.razerzone.com/images/da10m/carousel/razer-death-adder-gallery-29.png">
+                    </a> 
+                    <a href="Products/PcProductPage.html" id="Alienware Aurora r10 Ryzen Edition" class="product">
+                            <img src="https://images.hothardware.com/contentimages/article/2917/content/1x1_1200x1200_highres-alenware-aurora-ryzen.jpg">
+                    </a> 
+                    <a href="Products/MonitorProductPage.html" id="Samsung Odyssey Neo G9" class="product">
+                        <img src="https://img.global.news.samsung.com/global/wp-content/uploads/2021/07/Odyssey_Neo_G9_PR_main2.jpg">
+                    </a> 
+                    <a href="Products/HeadphoneProductPage.html" id="Sennheiser HD 560S" class="product">
+                        <img src="https://cdn.shopify.com/s/files/1/0065/4432/6771/products/HD560S_740x.png?v=1605123849">
+                    </a> 
+                    <a href="Products/VrProductPage.html"id="Valve Index" class="product">
+                        <img src="https://m.media-amazon.com/images/I/61QiWPgRS0S._AC_SL1500_.jpg">
+                    </a> 
+                    <a href="Products/ChairProductPage.html" id="Secretlab Omega Black" class="product">
+                        <img src="https://cdn.eteknix.com/wp-content/uploads/2018/07/O2-BLACK-12-684x1024.jpg">
+                    </a> 
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    
+</script>

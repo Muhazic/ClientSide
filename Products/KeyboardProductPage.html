@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Keyboard Product Page
+    </title>
+</head>
+<style>
+    body{
+        background-color: black;
+    }
+    .container_row{
+        display: grid;
+        height: 105vh;
+        width: 105vh;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .layer1, .layer2{
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .layer1 img{
+        min-height: 100vh;
+        min-width: 1024px;
+        width: 100%;
+        height: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin-left: 0px;
+        padding: 0px;
+    }
+
+    .layer2{
+        position: absolute;
+        margin-top: 70px;
+    }
+
+    .leftTab{
+        background-color: rgb(0, 0, 0);
+        color: white;
+        text-align: center;
+        margin: 5vw;
+        margin-top: .5vh;
+        margin-left: 3vw;
+        border-radius: 20px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 3vmin;
+        width: 1vw;
+        height: 3vw;
+        position: fixed;
+        font-weight:bold;
+    }
+
+    .rightTab{
+        background-color: rgb(0, 0, 0);
+        color: white;
+        text-align: center;
+        margin: 5vw;
+        margin-top: .5vh;
+        border-radius: 20px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 3vmin;
+        width: 1vw;
+        height: 3vw;
+        position:fixed;
+        left: 87vw;
+        font-weight:bold;
+    }
+
+    p{
+        font-family: 'Poppins', sans-serif; 
+        color: white;
+        position: absolute;
+        font-family: 'Poppins', sans-serif; 
+        top: 33vh;
+        left: 1100px;
+    }
+
+    .logo{
+        position: absolute;
+        top: -8vh;
+        left: 45.7vw;
+    }
+
+    .button {
+        height: 80px;
+        width: 300px;
+        padding-right: 12px;
+        font-family: 'Poppins', sans-serif; 
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        background-color: #ffffff;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+        margin: 5px
+    }   
+ 
+    .button:hover {background-color: #e2e2e2}
+ 
+    .button:active {
+        background-color: #555555;
+        box-shadow: 0 5px rgb(39, 39, 39);
+        transform: translateY(4px);
+    }
+
+    .productWrapper{
+        background-color: white;
+        position:absolute;
+        left: -10px;
+        top: 80px;
+        height: 815px;
+        width: 100.1vw;
+    }
+
+    .product{
+        display: inline-flex;
+        position: relative;
+        height: 600px;
+        width: 1000px;
+        justify-content: center;
+        margin-top: 50px;
+        margin-left: 10px;
+        margin-right: 20px;
+    }
+
+    .product img{
+        width: auto;
+        max-height: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .productInfoWrapper{
+        display: inline-flex;
+        position: absolute;
+        flex-flow: column wrap;
+        margin-top: 50px;
+        width: 800px;
+        height: 500px;
+    }
+    
+    .productInfoWrapper p{
+        color: black;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif; 
+        max-width: 100%;
+        margin: auto;
+        position:initial;
+    }
+    .productName{
+        margin-bottom: 0px;
+        font-size: 40px;
+    }
+    .productDescription{
+        margin-top: 50px;
+        font-size: 20px
+    }
+
+    .purchaseInfo{
+        display: flex;
+
+    }
+
+    .button {
+        height: 80px;
+        width: 300px;
+        padding-right: 12px;
+        font-family: 'Poppins', sans-serif; 
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        background-color: #000000;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+        margin: 5px
+    }   
+ 
+    .button:hover {background-color: #303030}
+ 
+    .button:active {
+        background-color: #555555;
+        box-shadow: 0 5px rgb(39, 39, 39);
+        transform: translateY(4px);
+    }
+</style>
+<body>
+    <div class="contaner_row">
+        <div class="layer2">
+            <a href="../aboutPage.html" class="leftTab">
+                ABOUT
+            </a>
+            <a href="../cart.html" class="rightTab">
+                CART
+            </a>
+ 
+            <a href="../productPage.html">
+                <img class="logo" type=png src="../images/cxdgamepad-01.png">
+            </a>
+      
+            <div class="productWrapper">
+                <div class="product">
+                    <img src="https://gamingshogun.com/wp-content/uploads/2020/09/BlackWidow-V3-Pro-2020-3D-Front.jpg">
+                </div>
+                <div class="productInfoWrapper">
+                    <p class="productName">
+                        BLACKWIDOW V3 PRO
+                    </p>
+                    <p class="productDescription">
+                        The world's first and most iconic mechanical gaming keyboard 
+                        makes its next game-changing evolution. Enter a new wireless 
+                        meta with the Razer BlackWidow V3 Pro with 3 modes of connection 
+                        for unrivalled versatility, and a satisfying gaming experience 
+                        comprised of best-in-class switches and full-height keys.
+                    </p>
+                    <div class="purchaseInfo">
+                        <button class="button" id="buyButton">
+                            Add To Cart
+                        </button>
+                        <p style="font-size: 35px; font-weight: bolder;">
+                            US$<span id="price">229.99</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+<script>
+    function addItem(){
+        var numItems = parseInt(localStorage.getItem('keyboard'));
+        numItems++;
+        var newNum = numItems.toString();
+        localStorage.setItem('keyboard', newNum);
+        window.location.href = "../cart.html";
+    }
+
+    var buyButton = document.getElementById('buyButton');
+    buyButton.addEventListener('click', addItem);
+</script>
